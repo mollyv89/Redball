@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>alert</title>
+  <script src="redball.js"></script>
+    <style>
+    div {overflow-x: hidden;
+       overflow-y: hidden;
+}
+    img {overflow:hidden;}
+  </style> 
+ </head>
+  <body>
+    <!-- <p>hello there!  You are about to get an alert! Press the button.</p>
+    <button onclick="alertFunction()">Alert</button><br><br> -->
+
+    <button onClick="left()">left</button>
+  <button onClick="right()">right</button>
+  <button onClick="up()">up</button>  
+  <button onClick="down()">down</button>
+  <button onClick="rightUp()">right up</button>
+  <button onClick="rightDown()">right down</button>
+  <button onClick="leftUp()">left up</button>
+  <button onClick="leftDown()">left down</button>
+  <button onClick="square()">square</button>
+  <button onClick="triangle()">triangle</button>
+  <button onClick="octagon()">octagon</button>
+  <button onClick="bounce()">bounce</button>
+  <button onClick="leftSide()">left Side</button>
+  <button onClick="rightSide()">right Side</button>
+  <button onClick="topSide()">top Side</button>
+  <button onClick="bottomSide()">bottom Side</button>
+  <div>
+    <img id="redball" src="http://storage.googleapis.com/ics-redball/redball.jpg" alt="redball">
+  </div>
+<script>
+      // function alertFunction(){
+      //   alert("hello there you!! you have been alerted!!");
+      // }
+    
+     function leftSide(){
+        while(redball.left>=0) {
+            redball.left = redball.left-5;
+        }
+    }
+    
+        function rightSide(){
+        var w = window.innerWidth;
+        while(redball.left<=w-100) {
+            redball.left = redball.left+5;
+        }
+    }
+
+        function topSide(){
+        while(redball.top>=0) {
+            redball.top=redball.top-5;
+        }   
+    }
+        
+        function bottomSide(){
+        var h = window.innerHeight;
+        while(redball.top<=h-100) {
+            redball.top=redball.top+5;    
+        }
+    }
+  
+  function down(){
+    redball.top = redball.top + 5;
+}
+
+  function up(){
+    redball.top = redball.top - 5;
+}
+
+  function left(){
+    redball.left = redball.left - 5;
+}
+
+  function right(){
+    redball.left = redball.left + 5;
+} 
+
+function rightUp(){
+  
+  redball.top = redball.top - 5;
+  redball.left = redball.left + 5;
+}
+
+
+function rightDown(){
+  redball.top = redball.top + 5;
+  redball.left = redball.left + 5;
+}
+
+function leftUp(){
+  redball.top = redball.top - 5;
+  redball.left = redball.left - 5;
+}
+
+function leftDown(){
+  redball.top = redball.top + 5;
+  redball.left = redball.left - 5;
+}
+
+function square(){
+  for(var i=0;i<=15;i++){
+    redball.left = redball.left + 15;
+  }
+  for(var i=0;i<=15;i++){
+    redball.top = redball.top + 15;
+  } 
+  for(var i=0;i<=15;i++){
+    redball.left = redball.left - 15;
+  }
+  for(var i=0;i<=15;i++){
+    redball.top = redball.top - 15;
+  }
+}
+
+function triangle(){
+  for(var i = 0;i <= 15;i++){
+  rightDown();
+  }
+  
+  for(var i = 0; i <= 15; i++){
+  left();
+  }
+  
+  for(var i = 0; i <= 15; i++){
+  up();
+  }
+}
+
+function octagon(){
+ for (i=0; i < 15; i++){
+ redball.left = redball.left + 5;
+}
+ for (i=0; i < 15; i++){
+ redball.top = redball.top + 5;
+ redball.left = redball.left + 5;
+}
+for (i=0; i < 15; i++){
+ redball.top = redball.top + 5;
+}
+for (i=0; i < 15; i++){
+ redball.left = redball.left - 5;
+ redball.top = redball.top + 5;
+}
+for (i=0; i < 15; i++){
+ redball.left = redball.left - 5;
+}
+for (i=0; i < 15; i++){
+ redball.left = redball.left - 5;
+ redball.top = redball.top - 5;
+}
+for (i=0; i < 15; i++){
+up();
+}
+for (i=0; i < 15; i++){
+rightUp();
+}
+}
+
+function bounce(){
+  for(i=0;i<5;i++){
+    rightUp();
+    }
+  for(i=0;i<5;i++){
+    rightDown();
+    }
+  }
+  
+  
+
+</script>
+  </body>
+</html>
